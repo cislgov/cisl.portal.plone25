@@ -1,0 +1,23 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five">
+
+
+  <browser:page
+      for="*"
+      name="scworkflow_users_view"
+      class=".scworkflow_users.GerenciaUsers"
+      permission="zope.Public"
+      allowed_interface=".interfaces.IGerenciaUsers"
+      />
+
+ 
+  <content class=".scworkflow_users.GerenciaUsers">
+  	<allow interface=".interfaces.IGerenciaUsers" />
+  </content>
+
+
+  
+
+
+</configure>

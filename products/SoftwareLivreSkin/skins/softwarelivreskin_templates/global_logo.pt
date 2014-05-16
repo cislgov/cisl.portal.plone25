@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      i18n:domain="plone">
+
+<body>
+
+<!-- THE PORTAL LOGO DEFINITION -->
+<div id="portal-logo" metal:define-macro="portal_logo">
+    <a href="/"
+       tal:attributes="href navigation_root_url"
+       accesskey="1">
+        <img class="logo-esquerda"
+             tal:define="portal_title portal_properties/title;"
+			 tal:attributes="src string:$portal_url/logo.png;
+                             alt portal_title" />
+    
+    <img class="logo-direita"
+	tal:attributes="src string:$portal_url/logo_esq.png;
+                         alt portal_title" />
+    </a>
+</div>
+
+</body>
+</html>

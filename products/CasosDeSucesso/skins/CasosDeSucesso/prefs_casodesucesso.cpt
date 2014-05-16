@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="plone">
+
+	<metal:block metal:fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1)" />    
+    <body>
+    	<div metal:fill-slot="prefs_configlet_main">
+    	
+    		<h1 class="documentFirstHeading" i18n:translate="">
+    			Configura&ccedil;&otilde;es do Caso de Sucesso
+    		</h1>
+
+			<a href=""
+       		   class="link-parent"
+               tal:attributes="href string:$portal_url/plone_control_panel"
+               i18n:translate="label_up_to_plone_setup">
+        		Up to Site Setup
+    		</a> 
+
+			<fieldset>
+				<legend><label>Caso de Sucesso</label></legend>
+				
+				<fieldset style="width: 500px;">
+					<legend>E-mail do Administrador</legend>
+						<form action=""
+                      		  name="form"
+                      		  method="post"
+                      		  tal:define="errors options/state/getErrors;">
+                            
+                            <input type="hidden" name="form.submitted" value="1" />
+ 
+ 
+							<div class="field"
+								tal:define="error errors/email | nothing;
+								            email context/portal_properties/serpro_casodesucesso_properties/email_administrator | string:;"
+								tal:attributes="class python:test(error, 'field error', 'field')">
+				
+				        	<div tal:content="error">Validation error output</div>
+						
+	                       		<input type="text" 
+	                                   id="email"
+	               					   size="50" 
+	                                   name="email"
+	                                   title="nome@email.com"
+	                                   i18n:attributes="title"
+	                                   class="searchField inputLabel"
+	                                   value=""
+	                                   tal:attributes="value email" />
+							</div>
+               
+               				<p>
+	                            <input class="context" type="submit" name="form.button.Save" value="Save" i18n:attributes="value label_save" />
+	    						<input class="standalone" type="submit" name="form.button.Cancel" value="Cancel" i18n:attributes="value label_cancel"/>
+    						</p>
+                       </form>
+				</fieldset>
+				
+			</fieldset>
+    	</div>
+    </body>      
+ </html>

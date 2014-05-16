@@ -1,0 +1,33 @@
+This is an example of the configuration you can use.  There is already a default configuration file that is loaded when CMFSin is first installed.
+
+---------
+
+[channels]
+crackbaby=http://www.crackbaby.com/backend.php
+top=http://headlines.internet.com/internetnews/top-news/news.rss
+web=http://headlines.internet.com/internetnews/wd-news/news.rss
+slashdot=1h:http://slashdot.org/slashdot.rdf
+freshmeat=http://freshmeat.net/backend/fm-releases-software.rdf
+
+[maps]
+humor=crackbaby
+internet=top,web
+geek=random:slashdot,freshmeat
+
+
+---------
+
+channels are the real news feeds, these map to Channel objects. 
+channels are 
+NAME=[time]URI
+
+where the optional time spec is
+\d+[hdwmy]:
+
+for example 1d for once a day, or 4h for every 4 hours and then the trailing colon
+
+maps hold n channels where n is 0+ they are a comma delimited list of
+channel names. If you start the list with a name followed by a ':'
+then you can specify a policy for ordering the data in the channel. At
+the time of this writing 'simple' and 'random' are provided as examples.
+

@@ -1,0 +1,50 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+<body>
+<div metal:define-macro="portlet"
+     tal:define="map string:google;
+                 results python:here.sin_tool.sin(map_name=map, max_size=5);
+                  default_max python: 10;
+                  true python: 1;
+                  false python: 0;
+                  verbose verbose | false;
+                  max max_size | default_max;
+                  sin here/sin_tool;">
+
+
+    <div class="portlet" id="portlet-imprensa">
+        <div class="portletHeader">
+        <div class="portletIcon">
+           <span tal:replace="nothing" />
+        </div>
+	 <a href="#" tal:attributes="href string:${utool}/sinList?synmap=${map}">
+            <span>Software Livre na Imprensa</span> &nbsp;
+            <span style="color: #888; font-size: 0.8em">by Google</span>
+	 </a>
+        </div>
+        <tal:rss tal:repeat="obj results">
+        <div class="portletItem">
+            <a class="" target="blank"
+               tal:attributes="href obj/link;
+                               title obj/title;"
+               tal:content="obj/title">title<br />
+            </a> - <span class="detalhes"
+                         tal:condition="python: obj.get('date') or nothing"
+                         tal:content="python: here.toLocalizedTime(obj['date'])" />
+        </div>
+        </tal:rss>
+
+
+        <div class="portletFooter">
+                 <a href="" 
+                    tal:attributes="href string:${utool}/sinList?synmap=${map}">
+	       		<img tal:attributes="src string:${portal_url}/seta.png;
+		                             alt string: >;"/>
+		        <span i18n:translate="box_more_news_link">More News</span>
+ 		 </a>
+        </div>
+</div>
+</div>
+</body>
+</html>

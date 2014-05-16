@@ -1,0 +1,83 @@
+﻿<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+<body>
+<div metal:define-macro="portlet"
+     tal:define="view context/@@news_view;
+                 results python:view.published_news_items()[:2];
+		 results python:here.portal_catalog.searchResults(portal_type='News Item',
+                                                                  sort_on='Date',
+                                                                  sort_order='reverse',
+                                                                  review_state=['published','publicado_todos'],
+                                                                  )[:2];		
+                 news_link view/all_news_link"
+     tal:condition="python:test(template.getId()!='news' and results, 1, 0)">
+
+    <div class="portlet" id="portlet-news">
+        <div class="portletIcon">
+             <span tal:replace="nothing" />
+        </div>
+             <div class="portletHeader">
+                  <a href="#" 
+                     tal:condition="python:'news' in portal.contentIds()"
+                     tal:attributes="href string:${utool}/news">
+                     <span i18n:translate="box_news">News</span></a>
+                  <a href="#" 
+                    tal:condition="python:'news' not in portal.contentIds()"
+                    tal:attributes="href string:${utool}/noticias">
+                    <span i18n:translate="box_news">News</span></a>
+             </div>
+
+        <tal:newsitems tal:repeat="obj results">
+        <div  class="portletItem">
+
+            <div class="portletTitle">
+             <a href=""
+               tal:attributes="href obj/getURL;
+                               title obj/Description">
+                <span tal:replace="obj/pretty_title_or_id"/>
+             </a>
+            </div>
+ 
+           <a href=""
+               tal:attributes="href obj/getURL;
+                               title obj/Description">
+                <span tal:content="obj/Description" />
+            </a>
+
+            <div class="detalhes">
+                 <a href=""
+                    tal:attributes="href obj/getURL;
+                                    title obj/Description">
+                     <img alt=">" tal:attributes="src string:${portal_url}/seta.png" /><span>leia mais</span>
+                  </a>
+                  <a href=""
+                     tal:define="item_url obj/getURL"
+                     tal:attributes="href string:$item_url/sendto_form;
+                                     title obj/Description">
+                     <img alt=">" tal:attributes="src string:${portal_url}/seta.png" /><span>enviar not&iacute;cia</span>
+                  </a>
+
+            </div>
+
+
+            <b><span>publicada em</span></b>
+            <span tal:content="python:toLocalizedTime(obj.Date)">May 5</span>
+        </div>
+
+        </tal:newsitems>
+
+        <div class="portletFooter">
+                 <a href="" 
+                    tal:attributes="href string:${portal_url}/noticias">
+	       		<img tal:attributes="src string:${portal_url}/seta.png;
+		                             alt string: >;"/>
+		        <span i18n:translate="box_more_news_link">More News</span>
+ 		 </a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

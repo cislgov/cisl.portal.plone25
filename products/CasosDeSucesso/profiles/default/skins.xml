@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<object name="portal_skins" 
+        meta_type="Plone Skins Tool"
+		allow_any="False" 
+		cookie_persistence="False"
+		request_varname="plone_skin">		
+		
+ <object name="CasosDeSucesso_templates"
+    meta_type="Filesystem Directory View"
+    directory="CasosDeSucesso:skins/CasosDeSucesso"/>
+		
+ <skin-path name="*">
+ 
+  <layer name="CasosDeSucesso_templates"
+     insert-after="custom"/>        
+  
+  <layer name="CasosDeSucesso/css"
+     insert-after="custom"/>        
+               
+ </skin-path>
+</object>

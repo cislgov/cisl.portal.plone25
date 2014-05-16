@@ -1,0 +1,81 @@
+ <div metal:define-macro="menu_adm_scw" id="menu_adm_scw"
+   tal:define="usuario python: here.portal_membership.getAuthenticatedMember();
+               perfil_user python:usuario.getProperty('editais_perfil', None);
+               isManager python: test(usuario.has_role(['Manager']));
+               administrador_usuario python: test(usuario.has_role(['Administrador_Usuario']));
+               user_roles python: usuario.getRoles();
+               autenticado python: perfil_user in ['GestorAviso', 'GestorAvisoGeral'];
+               elaborador python: perfil_user in ['ElaboradorAviso',];
+               fornecedor python: test(usuario.has_role(['Fornecedor']));
+               typeContexto python: context.getTypeInfo().getId()"
+   tal:condition="python: ('Authenticated' in user_roles) and (not(autenticado or elaborador or fornecedor))">
+   <div id="menu_adm" 
+        tal:define="user_groups python: usuario.getGroups();">
+
+       <tal:comment replace="nothing"> Cabecalho do Menu </tal:comment>
+       <div id="menu_adm_titulo">
+           Gest&atilde;o Workflow
+           <br />
+          <img src="" alt="Usu&aacute;rio Logado" tal:attributes="src python:portal_url+'/portal_skins/plone_images/user.gif'"/>
+           <span tal:replace="python: usuario.id">Admin</span>
+       </div>
+
+   <tal:comment replace="nothing"> Menu para Administradores de Usu&aacute;rios </tal:comment>
+   <div>
+      <ul id="menu_adm_links" class="menu_adm_links">
+      <li tal:condition="python:isManager or administrador_usuario">&#8226;
+       <a href="#" tal:attributes="href string: ${portal_url}/prefs_users_overview">Administrar Usu&aacute;rios</a>
+      </li>
+      </ul>
+   </div>
+
+   <tal:comment replace="nothing"> Trocar Senha </tal:comment>
+   <div>
+      <ul id="menu_adm_links" class="menu_adm_links">
+       <li>&#8226;
+       <a href="#" tal:attributes="href string: $portal_url/password_form"> Trocar senha </a>
+       </li>
+      </ul>
+   </div>
+
+   <tal:comment replace="nothing"> Gest&atilde;o de Conte&uacute;do </tal:comment>
+   <div>
+      <ul id="menu_adm_links" class="menu_adm_links">
+       <li>&#8226;
+       <a href="#" tal:attributes="href string: $portal_url/folder_contents"> Gest&atilde;o de Conte&uacute;do </a>
+       </li>
+      </ul>
+   </div>
+
+
+   <tal:comment replace="nothing"> Logout </tal:comment>
+   <div>
+      <ul id="menu_adm_links" class="menu_adm_links">
+       <li>&#8226;
+       <a href="#" tal:attributes="href string: $portal_url/logout"> Sair com seguran&ccedil;a </a>
+       </li>
+       </ul>
+   </div>
+
+   <div tal:condition="isManager">
+       <strong> Pap&eacute;is: </strong>
+         <ul id="menu_adm_links" class="menu_adm_links">
+         <li tal:repeat="user_role user_roles">&#8226;
+             <span tal:content="user_role"> role </span>
+         </li>
+         </ul>
+    </div>
+
+
+       <div tal:condition="user_groups">
+        <strong> Meus Grupos: </strong>
+           <ul id="menu_adm_links" class="menu_adm_links">
+           <li tal:repeat="user_group user_groups">&#8226;
+               <span tal:content="user_group"> group </span>
+           </li>
+           </ul>
+       </div>
+
+    </div>
+</div>
+ 

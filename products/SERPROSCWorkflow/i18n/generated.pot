@@ -1,0 +1,17 @@
+# ArchGenXML generated POT File
+# SERPRO/SUPSC <unknown>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: serpronet_workflow\n"
+"POT-Creation-Date: Mon Oct 30 11:36:29 2006\n"
+"PO-Revision-Date: Mon Oct 30 11:36:29 2006\n"
+"Last-Translator: SERPRO/SUPSC <unknown>\n"
+"Language-Team: SERPRO/SUPSC <unknown>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: serpronet_workflow\n"

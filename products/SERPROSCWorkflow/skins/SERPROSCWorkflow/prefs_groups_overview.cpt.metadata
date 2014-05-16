@@ -1,0 +1,8 @@
+[validators]
+validators =
+
+[actions]
+action.success = traverse_to:string:prefs_group_modify
+action.success..AddGroup=redirect_to:string:prefs_group_details
+action.success..Modify=traverse_to:string:prefs_group_modify
+action.success..Search=traverse_to:string:prefs_user_group_search_form

@@ -1,0 +1,6 @@
+[validators]
+validators...Register=protocolo_validator,valida_captcha
+
+[actions]
+action.success...Register=traverse_to:string:protocolo_save
+action.failure...Register=traverse_to:string:pageProtocolo

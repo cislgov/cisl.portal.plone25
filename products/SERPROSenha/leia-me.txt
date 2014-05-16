@@ -1,0 +1,77 @@
+Requisitos:
+
+ - Zope 2.9.4 ou mais recete;
+ - Produto SERPROSCCaptchaField - Dependência
+ - Plone 2.5 ou mais recente
+
+
+Informação:
+
+    Este produto foi desenvolvido através de requisitos passados pela SUPSD:
+
+        - Senha Forte os usuários deveração misturar em suas senhas números e caracteres especiais;
+        - Limite de mínimo e máximo de caracteres na senha configurável;
+        - Número de tentativas de login configurável;
+        - Tempo de bloqueo de login configurável;
+        - Escolha de uso no do Bloqueio de Login por número de tentativa ou Captcha no formulário de Login configurável;
+        - Após o bloqueio do usuário no portal será enviado um e-mail para o mesmo informando sobre o bloqueio;
+        - Desbloqueio de login caso necessite.
+
+   Após a instalação desse produto e configuração do mesmo a tela de login e a tela de alteração de senha já estarão em pleno funcionamentos com os novos requisitos.
+
+   ATENÇÃO sites que já estão em produção fazer backup antes de instalar o produto.
+
+Instalação:
+
+    Coloque o produto na Pasta Products da instância do Zope.
+
+    Vá em "configuração do site" no seu Plone Site e clique em Adicionar/Remover produtos, marque o SERPROSenha e depois clique em instalar.
+
+Utilização:
+
+    Após o produto instalado vá em "configuração do site" no seu Plone Site ira aparecer uma ferramenta "Configurações do portal password" do Produdo SERPROSEnha.
+    
+    Clique e "Configurações do portal password", após isso ira aparecer uma tela com os campos para configuração do Produto SERPROSenha.
+
+    Desbloqueio de Login, caso necessite desbloquear ou verificar se exite algum usuário bloqueado clique na aba "usuário bloqueados"
+
+
+Lista de templates padrões do Plone que foram modificadas:
+
+    - join_form - template de cadastro do portal:
+        Alteração na descrição de alguns campos e suportar o captcha;
+
+    - login_form - template de login do portal: 
+        Alteração na descrição de alguns campos e suportar o captcha;
+
+    - password_form e pwreset_form - template de alteração de senha: 
+        Alteração na descrição de alguns campos.
+
+
+
+Lista de scripts padrões do Plone que foram modificados:
+
+    - join_form_validate - script de validação para cadastro de usuários:
+        Foi adicionado algumas validações como: 
+            - user id não pode ser a senha;
+            - senha forte;
+
+    - login_form_validate - script que validade o usuario:
+        Foi adicionado as funçoes de tentativas e bloqueio
+
+    - plone_change_password, validate_pwreset_password - script de alteração de senha:
+        Foi adicionado algumas validações como: 
+            - user id não pode ser a senha;
+            - senha forte;
+
+    - logged_in - script que criar a sessão do usuário após autenticação:
+        Após a autenticação do usuário o número de tentativas é zerado.    
+
+    - register - script que regista o usuario:
+        Auteração na geração de senha.
+
+
+Autor:
+
+    - Clayton Caetano <claytonc.sousa@gmail.com> 
+

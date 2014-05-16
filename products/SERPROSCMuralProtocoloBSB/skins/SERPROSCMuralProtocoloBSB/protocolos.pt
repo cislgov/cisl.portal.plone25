@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
+       lang="pt-br"
+       metal:use-macro="here/main_template/macros/master"
+       i18n:domain="">
+
+  <body>
+    <metal:fill fill-slot="main">
+        <div id="lista-protocolos">
+
+        <h1 i18n:translate="label_protocolos">Protocolos</h1><p>
+
+	    <div id="container-protocolos"
+                 tal:define="buscaProtocolos python:here.portal_catalog(portal_type='Protocolo', sort_on='Date', sort_order='reverse', review_state='publicado_todos');
+                             protocolo python:[i for i in buscaProtocolos];
+                             Batch python:modules['Products.CMFPlone'].Batch;
+			     b_size python:10;
+                 				                    b_start python:request.get('b_start',0);
+                 				                    portal_discussion nocall:here/portal_discussion;
+                 				                    isDiscussionAllowedFor nocall:portal_discussion/isDiscussionAllowedFor;
+                 				                    getDiscussionFor nocall:portal_discussion/getDiscussionFor;
+                 				                    home_url python: mtool.getHomeUrl;">
+
+             <tal:block condition="python:len(protocolo) > 0">
+             <form name="searchresults" action="" method="post" tal:condition="protocolo"
+                      			                                   tal:define="batch python:Batch(protocolo, b_size, int(b_start), orphan=1)">
+             <table>
+                  <tr>
+                     <th>
+                       Nome da Instituição
+                     </th>
+                     <th>
+                       Declaração
+                     </th>
+                     <th>
+                       Plano de Migração
+                     </th>
+                  </tr>
+	       <span tal:repeat="obj batch">
+	          <tr tal:define="declaracao obj/Description;
+                                  titulo obj/Title;
+                                  filename python: obj.getObject().getFile().filename">
+                            <td id="colunaTitulo" tal:content="python: str(titulo)"></td>
+                            <td id="colunaDeclaracao" tal:content="python: str(declaracao)"></td>                                                           
+                            <td id="colunaArquivo"> 
+                               <a tal:attributes="href string:${obj/getURL}/at_download/file">                                  
+                                 <span tal:content="python: str(filename)"></span>
+                               </a>
+                            </td>                            
+                  </tr>                    
+	       </span>
+             </table>
+             <div metal:use-macro="here/batch_macros/macros/navigation" />
+             </form>
+             </tal:block>
+	    </div>
+
+
+        </div>
+    </metal:fill>
+
+  </body>
+
+</html>

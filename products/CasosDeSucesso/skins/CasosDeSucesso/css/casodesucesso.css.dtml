@@ -1,0 +1,35 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+#listagem_casosdesucesso {
+	margin-left: 0;
+}
+
+#listagem_casosdesucesso a {
+	border-bottom: none;
+}
+
+#listagem_casosdesucesso li {
+    display: list-item;
+	list-style: none;
+	margin-left: 0;
+	vertical-align: top;
+	border-bottom: 1px dashed #CCCCCC;
+    padding-bottom: 15px;
+    padding-top: 15px;	
+}
+
+#listagem_casosdesucesso .summary {
+	font-weight: bold;
+	font-size: 110%;
+}
+
+#listagem_casosdesucesso .logo {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+/* FIM css para alinhar itens no fitro da busca da caixa postal */
+
+/* </dtml-with> */

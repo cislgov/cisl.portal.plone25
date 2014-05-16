@@ -1,0 +1,185 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<head>
+    <metal:block fill-slot="top_slot"
+                 tal:define="dummy python:request.set('disable_border',1)" />
+</head>
+
+<body>
+
+<div metal:fill-slot="main"
+     tal:define="errors options/state/getErrors;">
+  <!--<div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+  </div>-->
+  <div id="linkPastaProtocolo"
+       tal:condition="python: not isAnon">
+        Clique 
+        <a tal:attributes="href string:${here/absolute_url}/folder_contents">
+           aqui
+        </a>   
+        para ver o conteúdo da pasta de Protocolos 
+  </div>
+  
+  <h1 tal:content="structure python:here.Title()" /><br />
+  <div id="bodyContent">       <div tal:replace="structure python:here.getBodyBefore()" /><br />
+  </div>
+  <form action="protocolo_save"
+        method="post"
+        class="enableUnloadProtection"
+        id="envio-de-protocolos"
+        tal:attributes="action template_id"
+        name="pageProtocolo" 
+        enctype="multipart/form-data">
+
+  <!-- Dados do protocolo -->
+
+  <div id="adicionarProtocolos">
+      <fieldset class="protocolo">
+         <legend>Para enviar um protocolo, preencha os campos abaixo</legend>
+         <div class="field"
+              tal:define="error errors/nomeInstituicao|nothing "
+              tal:attributes="class python:test(error, 'field error', 'field')">
+              <label for="nomeInstituicao">
+                    Nome da Instituição
+              </label>
+
+              <span class="fieldRequired" title="Required"
+                    i18n:attributes="title title_required;"
+                    i18n:translate="label_required">(Required)</span>
+
+              <div tal:content="error">Validation error output</div>
+
+              <input type="text"
+                     id="nomeInstituicao"
+                     name="nomeInstituicao"
+                     size="100"
+                     value=""
+                     tabindex=""
+                     tal:attributes="tabindex tabindex/next; 
+                                     value request/nomeInstituicao|nothing"/>
+         </div>
+
+         <div class="field"
+              tal:define="error errors/declaracao|nothing "
+              tal:attributes="class python:test(error, 'field error', 'field')">
+              <label for="declaracao">
+                     Declaração
+              </label>
+
+              <span class="fieldRequired" title="Required"
+                    i18n:attributes="title title_required;"
+                    i18n:translate="label_required">(Required)</span>
+
+
+              <div tal:content="error">Validation error output</div>
+
+              <textarea rows="3"
+                        cols="40" 
+                        name="declaracao" 
+                        id="declaracao"
+                        value=""
+                        tabindex="text/plain"
+                        tal:attributes="tabindex tabindex/next;" 
+                        tal:content="request/declaracao|nothing">
+              </textarea>
+         </div>
+  
+         <div id="arquivo-anexo" >
+           <div class="field"
+                tal:define="error errors/anexo|nothing "
+                tal:attributes="class python:test(error, 'field error', 'field')">
+                <label class="labelAnexo" for="anexo">
+                   Plano de Migração (odt, txt ou pdf)
+                </label>
+
+                    
+                <div tal:content="error">Validation error output</div>
+
+                <input type="file" 
+                     id="anexo"                
+                     name="anexo"
+                     size="25" 
+                     value=""
+                     tabindex="text/plain"
+                     tal:attributes="tabindex tabindex/next; 
+                                     value request/anexo|nothing" />
+
+           </div>
+         </div>   
+
+         <div metal:use-macro="here/campo_captcha_sonoro/macros/captcha_sonoro"/>
+     
+         <div id="botoes" >
+           <div class="formControls">
+               <input class="context"
+                      id="enviar"
+                      type="submit"
+                      tabindex=""
+                      name="Register"
+                      value="Enviar"
+                      tal:define="valor request/autorizacao|nothing"
+                      tal:attributes="tabindex tabindex/next;
+                                      disabled python: valor" />
+
+           
+           </div>
+         </div>
+
+      </fieldset>      
+  </div>
+  <input type="hidden" name="form.submitted" value="1" />
+  </form>
+  <div>
+     <fieldset class="protocolos">
+        <legend>Últimos protocolos publicados</legend>
+        <div id="ultimos-protocolos"
+             tal:define="protocolos python:here.portal_catalog(portal_type='Protocolo', sort_on='Date', sort_order='reverse', review_state='publicado_todos');"
+             tal:attributes="class python:'descricao-protocolos'"
+             tal:condition="python:len(protocolos) > 0">       
+           <table> 
+               <tr>
+                     <th>
+                       Nome da Instituição
+                     </th>
+                     <th>
+                       Declaração
+                     </th>
+                     <th>
+                       Plano de Migração
+                     </th>
+               </tr>
+               <tal:block define="listProtocolos python:protocolos[:3]"
+                    repeat="protocolo listProtocolos">                     
+                         <tr tal:define="declaracao protocolo/Description;
+                                         titulo protocolo/Title;
+                                         filename python: protocolo.getObject().getFile().filename">
+                            <td id="colunaTitulo" tal:content="python: str(titulo)"></td>
+                            <td id="colunaDeclaracao" tal:content="python: str(declaracao)"></td>                                                           
+                            <td> 
+                               <a tal:attributes="href string:${protocolo/getURL}/at_download/file">                                  
+                                 <span id="colunaArquivo" tal:content="python: str(filename)"></span>
+                               </a>
+                            </td>                            
+                         </tr>                                     
+               </tal:block>                     
+           </table>                      
+       
+        </div>
+        <div id="maisProtocolos">
+           <br/>
+           <br/>
+           <a tal:attributes="href string:protocolos">Mais</a>  
+       </div>
+     </fieldset>
+  </div> 
+  
+    
+
+</div>
+
+</body>
+</html>

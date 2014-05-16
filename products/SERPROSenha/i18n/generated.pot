@@ -1,0 +1,63 @@
+# ArchGenXML generated POT File
+# Clayton Caetano de Sousa <claytonc.sousa@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: SERPROSenha\n"
+"POT-Creation-Date: Mon Apr  2 14:23:31 2007\n"
+"PO-Revision-Date: Mon Apr  2 14:23:31 2007\n"
+"Last-Translator: Clayton Caetano de Sousa <claytonc.sousa@gmail.com>\n"
+"Language-Team: Clayton Caetano de Sousa <claytonc.sousa@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: SERPROSenha\n"
+
+#. Default: "Informe o limite máximo de caracteres para a senha. Para habilitar coloque um número maior ou igual que o mínimo de caracteres."
+#: tools/password_tool.py
+msgid "SERPROSenha_help_lim_max_password"
+msgstr ""
+
+#. Default: "Informe o limite mínimo de caracetres para senha."
+#: tools/password_tool.py
+msgid "SERPROSenha_help_lim_password"
+msgstr ""
+
+#. Default: "Informe a quantidade de minutos que o login do usuario ficara bloqueado."
+#: tools/password_tool.py
+msgid "SERPROSenha_help_mnt_lock"
+msgstr ""
+
+#. Default: "Informe a quantidade de tentativas."
+#: tools/password_tool.py
+msgid "SERPROSenha_help_qtd_tentativas"
+msgstr ""
+
+#. Default: "Habilita bloqueio de login ou Captcha"
+#: tools/password_tool.py
+msgid "SERPROSenha_label_enb_lock_login"
+msgstr ""
+
+#. Default: "máximo de caracteres"
+#: tools/password_tool.py
+msgid "SERPROSenha_label_lim_max_password"
+msgstr ""
+
+#. Default: "Mínimo de caracteres"
+#: tools/password_tool.py
+msgid "SERPROSenha_label_lim_password"
+msgstr ""
+
+#. Default: "Minutos Bloqueado"
+#: tools/password_tool.py
+msgid "SERPROSenha_label_mnt_lock"
+msgstr ""
+
+#. Default: "Número de Tentativas"
+#: tools/password_tool.py
+msgid "SERPROSenha_label_qtd_tentativas"
+msgstr ""
+

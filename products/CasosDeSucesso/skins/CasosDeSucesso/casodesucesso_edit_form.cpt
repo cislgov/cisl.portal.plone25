@@ -1,0 +1,7 @@
+<tal:plone2x condition="context/isPlone2">
+	<metal:use use-macro="here/macro_casodesucesso_edit_plone2x/macros/master"/>
+</tal:plone2x>
+
+<tal:plone3x condition="not:context/isPlone2">
+	<metal:use use-macro="here/macro_casodesucesso_edit_plone3x/macros/master"/>
+</tal:plone3x>

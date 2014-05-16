@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="40664"
+   name=""
+   committed-date="2007-04-16T12:29:31.154727Z"
+   url="https://svn.plone.org/svn/collective/PloneSurvey/branches/v1_1_1/Extensions"
+   last-author="nd51"
+   kind="dir"
+   uuid="db7f04ef-aaf3-0310-a811-c281ed44c4ad"
+   repos="https://svn.plone.org/svn/collective"
+   revision="42657"/>
+<entry
+   committed-rev="25421"
+   name="extractI18Nmsgids.py"
+   text-time="2007-04-02T14:14:11.000000Z"
+   committed-date="2006-06-27T19:37:22.150857Z"
+   checksum="01f102959256374f925ff404441eeedd"
+   last-author="naro"
+   kind="file"
+   prop-time="2007-04-02T14:14:11.000000Z"/>
+<entry
+   committed-rev="40664"
+   name="Install.py"
+   text-time="2007-04-16T12:28:19.000000Z"
+   committed-date="2007-04-16T12:29:31.154727Z"
+   checksum="a8ffb881aa0daa14621690fd6a77b5b0"
+   last-author="nd51"
+   kind="file"
+   prop-time="2007-04-02T14:14:11.000000Z"/>
+</wc-entries>

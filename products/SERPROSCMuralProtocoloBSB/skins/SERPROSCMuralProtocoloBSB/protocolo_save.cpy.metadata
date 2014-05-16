@@ -1,0 +1,7 @@
+[default]
+proxy=Manager
+
+[actions]
+action.success=redirect_to:string:pageProtocolo
+action.failure=traverse_to:string:pageProtocolo
+

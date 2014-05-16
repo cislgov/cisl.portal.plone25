@@ -1,0 +1,104 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plonesurvey">
+<body>
+<div metal:define-macro="question"
+     tal:define="matrix_questions question/getQuestions;
+                 qid question/getId;
+                 helpid string:${qid}_help;
+                 error errors/?qid|nothing"
+     tal:condition="matrix_questions">
+
+    <label tal:attributes="for qid"
+           tal:content="question/Title" />
+    <div class="formHelp"
+         tal:attributes="id helpid"
+         tal:content="question/Description" />
+
+    <div tal:attributes="class python:test(error, 'field error', 'field')">
+    <div tal:content="error" />
+
+    <table border="1"
+           tal:define="hasOptions python: hasattr(question, 'getAnswerOptions') and len(question.getAnswerOptions()) > 0;
+                       options question/getAnswerOptions;
+                       input_type question/getInputType">
+        <tr>
+            <td i18n:translate="label_matrix_question">Question</td>
+            <td tal:condition="python:input_type in ['radio', 'checkbox']"
+                tal:repeat="option options"
+                tal:content="option" />
+            <td tal:condition="python:input_type not in ['radio', 'checkbox']">
+                Select Option
+            </td>
+        </tr>
+
+        <tr tal:repeat="matrix_question matrix_questions">
+            <div tal:define="qid matrix_question/getId;
+                             answer python: request.get(qid, None) or matrix_question.getAnswerFor(member_id);">
+                <td>
+                    <label tal:content="matrix_question/Title"/>
+                    <span class="fieldRequired"
+                          title="Required"
+                          tal:condition="matrix_question/getRequired"
+                          i18n:translate="Required">(Required)</span>
+                </td>
+                <td tal:condition="python:input_type == 'radio'"
+                    tal:repeat="option options">
+                    <input type="radio"
+                           class="noborder"
+                           tal:attributes="value option;
+                                           name qid;
+                                           checked python: option == answer;
+                                           tabindex tabindex/next;" />
+                </td>
+                <td tal:condition="python:input_type == 'selectionBox'">
+                    <select tal:condition="python: question.getInputType() == 'selectionBox' and hasOptions"
+                            tal:attributes="name qid;
+                                            tabindex tabindex/next;">
+                        <option class="noborder" value="" i18n:translate="Please select">-- Please, select --</option>
+                        <option tal:repeat="option question/getAnswerOptions"
+                                class="noborder"
+                                tal:attributes="value option;
+                                                selected python: answer and option == answer;"
+                                tal:content="option">option</option>
+                    </select>
+                </td>
+                <td tal:condition="python:input_type == 'multipleSelect'">
+                    <select tal:condition="python: question.getInputType() == 'multipleSelect' and hasOptions"
+                            multiple="multiple"
+                            tal:attributes="name qid; tabindex tabindex/next;">
+                        <option tal:repeat="option question/getAnswerOptions"
+                                class="noborder"
+                                value="option"
+                                tal:attributes="value option;
+                                                selected python: answer and option in answer;"
+                                tal:content="option">option</option>
+                    </select>
+                </td>
+                <td tal:condition="python:input_type == 'checkbox'"
+                    tal:repeat="option question/getAnswerOptions">
+                    <input type="checkbox"
+                           class="noborder"
+                           name="answer"
+                           value="option"
+                           tal:attributes="value option;
+                                           name qid;
+                                           checked python: answer and option in answer;
+                                           tabindex tabindex/next;"/>
+                </td>
+            </div>
+        </tr>
+    </table>
+    </div>
+</div>
+<dl metal:define-macro="display">
+    <dt tal:content="question/Title" />
+    <dd tal:content="python: question.getAnswerFor(member_id)" />
+    <div tal:condition="python:hasattr(question, 'getCommentType') and question.getCommentType()"
+         tal:omit-tag="">
+        <dt>Comment</dt>
+        <dd tal:content="python: question.getCommentsFor(member_id) or 'No Comment'" />
+    </div>
+</dl>
+</body>
+</html>

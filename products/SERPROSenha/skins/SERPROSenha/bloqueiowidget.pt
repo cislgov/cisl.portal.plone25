@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <metal:view_macro define-macro="view"
+                      tal:define="vocab python:field.Vocabulary(here);
+                                  value python:accessor();
+                                  display python:here.displayValue(vocab, value)"
+                      tal:replace="structure display" />
+
+    <metal:define define-macro="edit">
+
+        <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+
+            <metal:fill fill-slot="widget_body"
+                        tal:define="vocab python:field.Vocabulary(here);
+                                    vlen python:len(vocab);
+                                    format python:widget.format">
+
+            <tal:radios repeat="item vocab">
+                <input class="noborder"
+                    tabindex=""
+                    type="radio"
+                    tal:define="tabindex tabindex/next"
+                    tal:attributes="name fieldName;
+                                    id string:${fieldName}_${repeat/item/number};
+                                    checked python:here.checkSelected(item, value);
+                                    value item;
+                                    tabindex tabindex;
+                                    onClick string:Inibe(${repeat/item/number})"
+                    />
+
+                <label tal:content="python:here.translate(vocab.getMsgId(item), default=vocab.getValue(item))"
+                    i18n:translate=""
+                    tal:attributes="for string:${fieldName}_${repeat/item/number}" />
+
+                <br />
+            </tal:radios>
+            </metal:fill>
+      </metal:use>
+    </metal:define>
+
+    <div metal:define-macro="search">
+      <div metal:use-macro="here/widgets/string/macros/edit">
+      </div>
+    </div>
+
+  </body>
+
+</html>

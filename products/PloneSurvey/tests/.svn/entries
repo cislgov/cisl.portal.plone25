@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="34874"
+   name=""
+   committed-date="2006-12-19T16:09:02.784701Z"
+   url="https://svn.plone.org/svn/collective/PloneSurvey/branches/v1_1_1/tests"
+   last-author="tim2p"
+   kind="dir"
+   uuid="db7f04ef-aaf3-0310-a811-c281ed44c4ad"
+   repos="https://svn.plone.org/svn/collective"
+   prop-time="2007-04-02T14:14:19.000000Z"
+   revision="42657"/>
+<entry
+   committed-rev="34874"
+   name="testAddAnswer.py"
+   text-time="2007-04-02T14:14:19.000000Z"
+   committed-date="2006-12-19T16:09:02.784701Z"
+   checksum="e758b72c3735b9bb6661ad5aa1d4bc63"
+   last-author="tim2p"
+   kind="file"
+   prop-time="2007-04-02T14:14:18.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="pstc.py"
+   text-time="2007-04-02T14:14:20.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="1a50984e92b6dc602c9718d37d15b881"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:18.000000Z"/>
+<entry
+   committed-rev="33785"
+   name="testValidation.py"
+   text-time="2007-04-02T14:14:20.000000Z"
+   committed-date="2006-11-16T21:14:13.911360Z"
+   checksum="d16bfd472707f1b3c784aff9a15c1fee"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:18.000000Z"/>
+<entry
+   committed-rev="26438"
+   name="testBranching.py"
+   text-time="2007-04-02T14:14:20.000000Z"
+   committed-date="2006-07-25T22:21:07.219878Z"
+   checksum="773a0aaf02b49b7189ee7d95e683adee"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:18.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="framework.py"
+   text-time="2007-04-02T14:14:20.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="dea6eebf18794a12b50dadc03a4f9b01"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:18.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="__init__.py"
+   text-time="2007-04-02T14:14:21.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="0dceaa5b453e9a34565e562dbea61e90"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:19.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="runalltests.py"
+   text-time="2007-04-02T14:14:21.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="a296010f9a8e2c4ce57e1f6cf990ba2f"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:19.000000Z"/>
+<entry
+   committed-rev="34873"
+   name="testSetup.py"
+   text-time="2007-04-02T14:14:21.000000Z"
+   committed-date="2006-12-19T16:07:47.528972Z"
+   checksum="b6fc68cbf046c84cf608cb87febd98ec"
+   last-author="tim2p"
+   kind="file"
+   prop-time="2007-04-02T14:14:19.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="testSkeleton.py"
+   text-time="2007-04-02T14:14:21.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="71cb968b490f051245089c76a208e4af"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:19.000000Z"/>
+</wc-entries>

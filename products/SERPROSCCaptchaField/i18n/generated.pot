@@ -1,0 +1,18 @@
+# ArchGenXML generated POT File
+# Rafael Ferreira Silva <rafael@rafaelsilva.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: CaptchaField\n"
+"POT-Creation-Date: Mon Sep  4 16:34:33 2006\n"
+"PO-Revision-Date: Mon Sep  4 16:34:33 2006\n"
+"Last-Translator: Rafael Ferreira Silva <rafael@rafaelsilva.net>\n"
+"Language-Team: Rafael Ferreira Silva <rafael@rafaelsilva.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: CaptchaField\n"
+

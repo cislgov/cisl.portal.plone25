@@ -1,0 +1,10 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+.documentByLine {
+	display: none;
+}
+
+/* FIM css para alinhar itens no fitro da busca da caixa postal */
+
+/* </dtml-with> */

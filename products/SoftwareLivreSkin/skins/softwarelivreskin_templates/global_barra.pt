@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      i18n:domain="plone">
+
+<body>
+
+<!-- THE PORTAL BAR DEFINITION -->
+<div id="portal-barra" metal:define-macro="presidencia">
+
+<script language="Javascript" type="text/javascript">
+ <!--
+  function abreJanela(combobox){
+   window.open(combobox.options[combobox.selectedIndex].value,'_blank');
+  }
+  //-->
+</script>
+
+	<a class="img-pr" target="_blank" href="/"
+	   tal:attributes="href string:http://www.presidencia.gov.br"><img  
+		 tal:attributes="src string:$portal_url/barra.png;
+	                         alt string:Presidencia da Republica" /></a>
+
+	<a class="img-slogan" target="_blank" href="/"
+	   tal:attributes="href string:http://www.brasil.gov.br"><img 
+		 tal:attributes="src string:$portal_url/brasil.png;
+	                         alt string:Brasil, um pais de todos" /></a>
+
+	<select name="noticias" onchange="abreJanela(this)">
+	   <option value="#">Destaques do Governo</option>
+	   <option value="http://www.brasil.gov.br">Portal do Governo Federal</option>
+	   <option value="http://www.e.gov.br">Portal de Servi&ccedil;os do Governo</option>
+	   <option value="http://www.radiobras.gov.br">Portal da Ag&ecirc;ncia de Not&iacute;cias</option>
+	   <option value="http://www.brasil.gov.br/emquestao">Em Quest&atilde;o</option>
+	   <option value="http://www.fomezero.gov.br">Programa Fome Zero</option>
+	</select>
+
+
+</div>
+
+</body>
+</html>

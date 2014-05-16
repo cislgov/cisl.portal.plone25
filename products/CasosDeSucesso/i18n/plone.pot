@@ -1,0 +1,41 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-23 13:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: ./skins/SERPROSCCaptchaField/campo_captcha_sonoro.pt:14
+msgid "For the perfect functioning of the text feature validation requires that JavaScript be enabled."
+msgstr ""
+
+#: ./skins/SERPROSCCaptchaField/CaptchaWidget.pt:24
+#: ./skins/SERPROSCCaptchaField/campo_captcha_sonoro.pt:36
+msgid "In case you can't see the characters, click here to activate captcha's sound version."
+msgstr ""
+
+#: ./skins/SERPROSCCaptchaField/campo_captcha_sonoro.pt:23
+msgid "Required"
+msgstr ""
+
+#: ./skins/SERPROSCCaptchaField/campo_captcha_sonoro.pt:25
+msgid "Type in the characters from the image below to continue (case sensitive):"
+msgstr ""
+
+#. Default: "Captcha"
+#: ./skins/SERPROSCCaptchaField/campo_captcha_sonoro.pt:20
+msgid "label_captcha"
+msgstr ""
+

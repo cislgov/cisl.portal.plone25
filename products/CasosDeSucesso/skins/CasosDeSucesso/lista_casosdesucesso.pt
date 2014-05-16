@@ -1,0 +1,175 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<metal:block metal:fill-slot="top_slot"
+             tal:define="isAnon python:not context.portal_membership.getAuthenticatedMember().has_role('Authenticated');
+             		    dummy python:isAnon and request.set('disable_border',1) or None" />
+<body>
+
+<div metal:fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+				    tal:define="Batch python:modules['Products.CMFPlone'].Batch;
+				                b_start request/b_start | python:0;
+				                b_size request/b_size | python:10;
+				                pw python: context.portal_workflow;">
+		<span class="caso-sucesso">		                
+	    <form name="Caso_Sucesso_Add" method="POST"     		  
+    		  tal:define="add python:'form.button.add' in request.keys();">
+    		<h1 class="documentFirstHeading summary">Casos de Sucesso</h1>
+    		
+			<input type="hidden" name="form.submitted" value="1" /><br/>
+
+	        <div class="field">
+				<span tal:replace="structure here/getText"/> 	
+	        </div>
+		                  
+    		<metal:block tal:condition="add">
+    			<tal:redirect define="dummy python:request.response.redirect(here.absolute_url()+'/createObject?type_name=CasoDeSucesso');" />
+    		</metal:block>				                
+			<input class="standalone add"
+	               tabindex=""
+	               type="submit"
+	               name="form.button.add"
+	               value="Adicionar Caso de Sucesso"
+	               tal:attributes="tabindex tabindex/next;"
+	               tal:condition="python: checkPermission('CasoDeSucesso: Adicionar Caso de Sucesso', here)"/>
+	    </form>
+	    <br/>
+	    <br/>
+	    <form name="filtro_ano" method="POST" 
+    		  tal:attributes="action string:${here/absolute_url}/${template/id};"
+    		  tal:define="caminho python:'/'.join(context.getPhysicalPath());
+    		              utils context/@@casodesucesso_utils_view;
+    		              lista_categorias python:utils.lista_categorias(caminho);
+    		  			  dicionario_categorias python:context.obter_dicionario_categorias();
+    		  			  findAll python:'form.button.FindAll' in request.keys();
+		                  Search python:'form.button.Search' in request.keys();
+		                  texto request/texto | nothing;
+		                  categoria request/categoria | nothing;
+		                  results python: test(Search or findAll, context.obter_casosdesucesso(texto=texto, categoria=categoria, findAll=findAll), context.obter_casosdesucesso(limit=10));
+		                  batch python:results and Batch(results, b_size, int(b_start), orphan=1);">
+	                  
+   		
+	        <b>Pesquisa de Casos de Sucesso:</b>
+
+			<table id="sortable"
+	               class="filtro_casosdesucesso"
+	               summary="Listing">
+	               
+		       <tr align="left">
+		       	   <th>
+						<span tal:omit-tag="" i18n:translate="">Categoria</span>:
+	  			  </th>
+		       	   <th>   
+	  				<select id="categoria" name="categoria" tabindex="" class="quickSearch"
+								tal:attributes="tabindex tabindex/next;">
+							<option value="">Selecione</option>	
+							<tal:block repeat="registro lista_categorias">
+							<option value="" selected="" 
+							    tal:define="UID python:registro.getObject().UID()"
+								tal:attributes="value UID;
+												selected python:test(UID == categoria);"
+								tal:content="registro/Title">
+							</option>
+							</tal:block>
+						</select>
+				  </th>
+			   </tr>
+			   
+			   <tr align="left">
+			      <th>
+			          <span tal:omit-tag="" i18n:translate="">Texto da Busca</span>:
+				  </th>
+		       	   <th>   
+		              <input tabindex=""
+		                     class="quickSearch"
+		                     type="text"
+		                     name="texto"
+		                     size="40"
+		                     tal:attributes="value texto;
+		                                     tabindex tabindex/next;"
+		                />
+				  </th>
+			   </tr>
+			   
+			   <tr align="right">
+		       	   <th colspan="2">   
+			            <input type="submit"
+			                           class="searchButton"
+			                           name="form.button.Search"
+			                           value="Search"
+			                           tabindex=""
+			                           i18n:attributes="value label_search;"
+			                           tal:attributes="tabindex tabindex/next;" />
+		
+			            <input type="submit"
+			                           class="searchButton"
+			                           name="form.button.FindAll"
+			                           value="Show all"
+			                           tabindex=""
+			                           i18n:attributes="value label_showall;"
+			                           tal:attributes="tabindex tabindex/next;" />
+		           </th>
+			   </tr>
+
+	        </table>
+	        
+	        <tal:listing condition="results">
+
+            <ul id="listagem_casosdesucesso">
+                <tal:entry tal:repeat="item batch">
+
+					<tal:def define="item_url item/getURL|item/absolute_url;
+									 utils context/@@casodesucesso_utils_view;
+                                                                         path_logo python: '%s/logo_mini' % item_url;
+									 review_state item/review_state;">
+
+	                    <li>
+	                    
+	                    	<div>
+		                   	 	<span class="summary">
+		                        	<a class="state-published"
+		                               tal:content="item/Title"
+		                               tal:attributes="href item_url;
+		                               				   class string:state-${review_state}" />
+		                        </span>
+		
+		                        &mdash;
+		                        
+		                        <span class="documentByLine" tal:content="item/getOrgao_casodesucesso"/>
+		                    </div>
+							
+	                    	<div class="logo">
+	                    		<img tal:attributes="src path_logo"/>
+	                    	</div>
+							<div tal:condition="python: review_state=='published'">	
+		                       	<span class="documentByLine" tal:content="python: 'Publicado em %s' % DateTime(item.ModificationDate).strftime('%d/%m/%Y')"/>
+	                        </div>
+	                        <div class="description" tal:content="structure item/Description" >
+	                        </div>
+	                    	<div class="visualClear"></div>
+	                    </li>
+	                    
+					</tal:def>
+                </tal:entry>
+            </ul>
+            
+        </tal:listing>
+        <tal:block tal:condition="not:results">
+        <br/>
+                    Nenhum resultado encontrado. Tente refinar a sua pesquisa, ou utilize a navegação por categorias.
+        </tal:block>
+
+		  	<tal:nav condition="batch">
+          		<div metal:use-macro="here/batch_macros/macros/navigation" />
+		  	</tal:nav>
+    		   
+		</form>
+		
+		</span>
+	</tal:main-macro>
+</div>
+
+</body>
+</html>

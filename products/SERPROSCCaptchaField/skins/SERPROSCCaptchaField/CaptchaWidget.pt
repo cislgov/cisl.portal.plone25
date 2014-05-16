@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+  <head><title></title></head>
+  <body>
+
+    <!-- String Widgets -->
+    <metal:view_macro define-macro="view"
+		      tal:replace="structure accessor" />
+
+    <metal:define define-macro="edit">
+      <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+      <tal:block metal:fill-slot="widget_body">
+      	  <div class="fieldLogin">
+            <img tal:attributes="src string:$here_url/@@captcha_view/geraImagem" id="ac_captcha_img" alt="caracteres"/>
+	      </div>
+	      <input 
+	       type="text"
+	       name="captcha"
+	       value=""
+	       id="ac_captcha_img"
+	       size="30"
+	       tabindex="#"
+	       tal:attributes="value value;
+	       size widget/size;
+	       maxlength widget/maxlength;
+	       tabindex tabindex/next;"
+	       />
+	     </tal:block>
+      </metal:use>
+    </metal:define>
+
+    <div metal:define-macro="search">
+      <div metal:use-macro="here/widgets/string/macros/edit">
+      </div>
+    </div>
+
+  </body>
+
+</html>

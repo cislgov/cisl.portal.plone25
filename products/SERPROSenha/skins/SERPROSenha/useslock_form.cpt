@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+
+<body>
+<div metal:fill-slot="main" 
+     tal:define="users python:context.portal_password.getUsersLock()">
+    <tal:if tal:condition="users">
+        <form method="POST" tal:attributes="action string:${here/absolute_url}/${template/id};">
+            <table width="100%" class="listing">
+                <thead>
+                    <th class="nosort">
+                        <input class="noborder"
+                               type="checkbox"
+                               src="select_all_icon.gif"
+                               name="selectButton"
+                               title="Select all items"
+                               alt="Select all items"
+                               onClick="toggleSelect(this,'paths:list');"
+                               tal:attributes="src string:$portal_url/select_all_icon.gif"
+                               i18n:attributes="title label_select_all_items; alt label_select_all_items;"/>
+                    </th>
+                    <th>UserId</th>
+                    <th>Nome</th>
+                    <th>E-Mail</th>
+                    <th>Hora Bloqueio</th>
+                </thead>
+                <tbody>
+                    <tal:block tal:repeat="user users">
+                        <tr tal:define="usuario python:context.portal_membership.getMemberById(str(user));
+                                        oddrow repeat/user/odd;
+                                        item_path usuario;"
+                            tal:attributes="class python:test(oddrow,'even','odd')">
+                            <td><input type="checkbox"
+                                       class="noborder"
+                                       name="paths:list" 
+                                       id="#"
+                                       value="#"
+                                       tal:attributes="value item_path;
+                                                       id item_path">
+                                 <input type="hidden" name="obj_paths:list" value="#"
+                                         tal:attributes="value item_path" />
+                            </td>
+                            <td tal:content="usuario">userid</td>
+                            <td tal:content="python:usuario.getProperty('fullname',None)">nome</td>
+                            <td tal:define="email python:usuario.getProperty('email',None)">
+                                <a tal:attributes="href string:mailto:${email}"
+                                   tal:content="email">e-mail</a>
+                            </td> 
+                            <td tal:content="python:str(usuario.getProperty('date_lock',None))[:19]">hora bloqueio</td>
+                        </tr>	
+                    </tal:block>
+                </tbody>
+            </table>
+            <br/><br/>
+            <p><input type="submit" name="form.button.submit" value="Desbloquear" /></p>
+            <input type="hidden" name="form.submitted" value="1" />
+        </form>
+    </tal:if>
+    <tal:if tal:condition="not: users">
+        <span> Nenhum usu&#225;rio bloqueado.</span>
+    </tal:if>
+</div>
+</body>
+</html>

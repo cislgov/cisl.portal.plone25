@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="42657"
+   name=""
+   committed-date="2007-05-25T13:54:15.565582Z"
+   url="https://svn.plone.org/svn/collective/PloneSurvey/branches/v1_1_1/skins/plone_survey"
+   last-author="nd51"
+   kind="dir"
+   uuid="db7f04ef-aaf3-0310-a811-c281ed44c4ad"
+   repos="https://svn.plone.org/svn/collective"
+   revision="42657"/>
+<entry
+   committed-rev="34297"
+   name="spreadsheet3.py"
+   text-time="2007-04-02T14:14:29.000000Z"
+   committed-date="2006-12-03T18:33:03.207688Z"
+   checksum="27f840ae1d43ac227423108f338b9122"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:23.000000Z"/>
+<entry
+   committed-rev="32632"
+   name="respondents_view.cpt"
+   text-time="2007-04-02T14:14:29.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="fbe1e8bd33066c12c70b39f3ff7b8a09"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:24.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="validate_reset_survey.vpy"
+   text-time="2007-04-02T14:14:29.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="9ad3c41574403e50036af885abdadc94"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:24.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="survey_overview_macro.pt"
+   text-time="2007-04-02T14:14:30.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="bb00849cbbc1c46943c8485deb427ebe"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:24.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="arrowDown.gif"
+   text-time="2007-04-02T14:14:30.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="f3193af90333f7e2892838893d34e7e5"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:24.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="info_small.gif"
+   text-time="2007-04-02T14:14:30.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="4c1564cf7782dfb7a0f6ccdf26cb96cf"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:24.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="SurveyIcon_Empty.gif"
+   text-time="2007-04-02T14:14:30.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="54aa3dcb4d98e0a5194d31c5df020a8d"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="35616"
+   name="getSurveyRoot.py"
+   text-time="2007-04-02T14:14:30.000000Z"
+   committed-date="2007-01-10T10:16:45.313109Z"
+   checksum="752658c528ecc019b13b269fab6e9056"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="31945"
+   name="survey_view.cpt.metadata"
+   text-time="2007-04-02T14:14:31.000000Z"
+   committed-date="2006-10-17T21:34:02.268147Z"
+   checksum="d03924581e7fcb7e19508a15b3884fd9"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="27316"
+   name="question_barchart.pt"
+   text-time="2007-04-02T14:14:31.000000Z"
+   committed-date="2006-08-16T10:10:58.844593Z"
+   checksum="1fc44df942234bbbcb1d1f189d135497"
+   last-author="rsantos"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="42657"
+   name="comments_view.pt"
+   text-time="2007-05-25T13:53:45.000000Z"
+   committed-date="2007-05-25T13:54:15.565582Z"
+   checksum="33fbf918d879cff2983550869f63f083"
+   last-author="nd51"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="23710"
+   name="respondents_view.cpt.metadata"
+   text-time="2007-04-02T14:14:31.000000Z"
+   committed-date="2006-05-18T13:24:49.964391Z"
+   checksum="5bcf18c892c189e22602eee5efe5bc7b"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="23474"
+   name="survey_results.css.dtml"
+   text-time="2007-04-02T14:14:32.000000Z"
+   committed-date="2006-05-15T10:39:03.294384Z"
+   checksum="6d9ede0f8d2696459850e5f0bf999f50"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:25.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="SubmitPage.gif"
+   text-time="2007-04-02T14:14:32.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="06869959eaadd27da8e1f1a38d364712"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="23474"
+   name="survey_reset_form.cpt"
+   text-time="2007-04-02T14:14:32.000000Z"
+   committed-date="2006-05-15T10:39:03.294384Z"
+   checksum="c4041e7f62daf2c8bdf83874c252f42a"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="23474"
+   name="survey_view_results.pt.metadata"
+   text-time="2007-04-02T14:14:32.000000Z"
+   committed-date="2006-05-15T10:39:03.294384Z"
+   checksum="ebad556f34e04e28dc82c5cf64adcdf8"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="Surveyfolder_Empty.gif"
+   text-time="2007-04-02T14:14:32.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="8fb701c4364f0b040926a0cc5349e71b"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="26598"
+   name="survey_reset.vpy"
+   text-time="2007-04-02T14:14:33.000000Z"
+   committed-date="2006-08-01T15:03:59.622709Z"
+   checksum="d788fe14c0b5a7bc1a01e4e6396b944a"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="31945"
+   name="survey_view.cpt"
+   text-time="2007-04-02T14:14:33.000000Z"
+   committed-date="2006-10-17T21:34:02.268147Z"
+   checksum="8c3d68f52a98908c641f4a8fafac2ee6"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="Surveyfolder_Ticked.gif"
+   text-time="2007-04-02T14:14:33.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="78e7f7625ed89e07471fadfa08eeaff5"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="34543"
+   name="spreadsheet2.py"
+   text-time="2007-04-02T14:14:33.000000Z"
+   committed-date="2006-12-11T12:41:23.916253Z"
+   checksum="12f63fdace34f1add40ec5ea2d9e4746"
+   last-author="nd51"
+   kind="file"
+   prop-time="2007-04-02T14:14:26.000000Z"/>
+<entry
+   committed-rev="33785"
+   name="validate_survey.vpy"
+   text-time="2007-04-02T14:14:34.000000Z"
+   committed-date="2006-11-16T21:14:13.911360Z"
+   checksum="11280783715553288f6379629f1b524e"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="25423"
+   name="respondents_reset.vpy"
+   text-time="2007-04-02T14:14:34.000000Z"
+   committed-date="2006-06-27T20:49:35.288532Z"
+   checksum="62cbe53b28c8cb924fd8cc4ab058e31e"
+   last-author="naro"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="35616"
+   name="portlet_questions.pt"
+   text-time="2007-04-02T14:14:34.000000Z"
+   committed-date="2007-01-10T10:16:45.313109Z"
+   checksum="ab7e89b16db447bd05072e4ebbb5d0d2"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="23474"
+   name="survey_reset_form.cpt.metadata"
+   text-time="2007-04-02T14:14:34.000000Z"
+   committed-date="2006-05-15T10:39:03.294384Z"
+   checksum="8933ced4bab17ae96f40156aa2ad3c5b"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="40585"
+   name="survey_view_results.pt"
+   text-time="2007-04-13T15:36:30.000000Z"
+   committed-date="2007-04-13T15:38:56.271205Z"
+   checksum="9a1815e669bd92e14f3fe886b16a9665"
+   last-author="nd51"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="SurveyIcon_Ticked.gif"
+   text-time="2007-04-02T14:14:35.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="a4c148caf6faccf69f95c511dd6ed430"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:27.000000Z"/>
+<entry
+   committed-rev="32632"
+   name="question_matrix_macro.pt"
+   text-time="2007-04-02T14:14:35.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="de0cf89af5e9ad3d507d5e712d077a92"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="31944"
+   name="spreadsheet.py"
+   text-time="2007-04-02T14:14:35.000000Z"
+   committed-date="2006-10-17T20:47:36.991463Z"
+   checksum="18be0e15caa7085bcf27dad8830a9e9d"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="23474"
+   name="icon_plonesurvey_small.gif"
+   text-time="2007-04-02T14:14:35.000000Z"
+   committed-date="2006-05-15T10:39:03.294384Z"
+   checksum="ce005189a65b3a295583fccf1c9eedd7"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="Save.gif"
+   text-time="2007-04-02T14:14:36.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="f8c571b762674a64caac6e3fb8669827"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="arrowUp.gif"
+   text-time="2007-04-02T14:14:36.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="8beba209f7a2557207dff466a38c8624"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="32632"
+   name="survey_overview.pt"
+   text-time="2007-04-02T14:14:36.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="c926165928ecc1fbf7a49d10d8c7bbc7"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:28.000000Z"/>
+<entry
+   committed-rev="22589"
+   name="Submit.gif"
+   text-time="2007-04-02T14:14:36.000000Z"
+   committed-date="2006-04-24T07:15:06.704998Z"
+   checksum="14e77647b4217b10469b7fb70c4b5243"
+   last-author="aullman"
+   kind="file"
+   prop-time="2007-04-02T14:14:29.000000Z"/>
+<entry
+   committed-rev="27316"
+   name="question_macro.pt"
+   text-time="2007-04-02T14:14:37.000000Z"
+   committed-date="2006-08-16T10:10:58.844593Z"
+   checksum="2a8e388bfe62d881b9c712b00e7b2382"
+   last-author="rsantos"
+   kind="file"
+   prop-time="2007-04-02T14:14:29.000000Z"/>
+<entry
+   committed-rev="27319"
+   name="html_spreadsheet.pt"
+   text-time="2007-04-02T14:14:37.000000Z"
+   committed-date="2006-08-16T10:13:34.777986Z"
+   checksum="06461a35b3e69e7e9195770b9a9bf74b"
+   last-author="rsantos"
+   kind="file"
+   prop-time="2007-04-02T14:14:29.000000Z"/>
+</wc-entries>

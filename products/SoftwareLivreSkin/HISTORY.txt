@@ -1,0 +1,8 @@
+Changelog for SoftwareLivreSkin
+
+    (name of developer listed in brackets)
+
+SoftwareLivreSkin 1.0 - Unreleased
+
+    - Generated skeleton product from DIYPloneStyle.
+      [generator]

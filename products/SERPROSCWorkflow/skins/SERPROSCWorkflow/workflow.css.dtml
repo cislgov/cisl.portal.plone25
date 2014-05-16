@@ -1,0 +1,38 @@
+/*
+   <dtml-with base_properties>
+   <dtml-call "REQUEST.set('portal_url', portal_url())">
+*/
+
+#menu_adm {
+background: #e8e6e6;
+border: 1px dashed #CCCCCC;
+padding: 2px 2px 2px 2px;
+width: 100% !important;
+margin-bottom: 2px;
+}
+
+.menu_adm_links {
+padding: 0px 0px 0px 0px;
+list-style-image: none;
+list-style-type: none;
+}
+
+#menu_adm ul {
+margin:0.5em 0pt 0pt 1.1em !important;
+padding:0pt;
+}
+
+#menu_adm_links li {
+padding: 0px 0px 0px 0px;
+list-style-image: none !important;
+list-style-type: none !important;
+white-space: wrap;
+}
+
+#menu_adm_titulo {
+background: #BBBBBB;
+padding: 2px 2px 2px 2px;
+text-align: center;
+}
+
+/* </dtml-with> */

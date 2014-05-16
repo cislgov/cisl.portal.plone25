@@ -1,0 +1,12 @@
+[default]
+title = Prefs Caso de Sucesso
+
+[validators]
+validators = validate_prefs_casodesucesso
+validators..Save = validate_prefs_casodesucesso
+validators..Cancel = 
+
+[actions]
+action.success = traverse_to:string:save_prefs_casodesucesso
+action.success..Cancel = traverse_to:string:plone_control_panel
+action.failure = traverse_to:string:prefs_casodesucesso

@@ -1,0 +1,59 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="publicator">
+
+<body>
+
+ <div class="portlet" metal:define-macro="portlet"
+     tal:define="box_id string:banner;
+                 portal_publicator nocall:here/portal_publicator;
+                 pb python:portal_publicator.getPublicationBoxesInfo(box_id);
+                 portal_url nocall:here/portal_url;
+                 isVisible pb/visible;"
+     tal:condition="isVisible"
+     tal:omit-tag="">
+
+    <div class="portlet" id="portlet-banner"
+         tal:define="box_name pb/name;
+                     box_icon_url pb/icon_url;
+                     box_items python:pb['items'];"> 
+
+
+             <a href="" 
+                 tal:condition="python:checkPermission('Review portal content', here)"
+                 tal:attributes="href string:${utool}/publicator_edit_form?box_id=${box_id}">
+                  <img align="right"
+                       src="" alt="Edit" title="Edit" height="16" width="16"
+                       tal:attributes="src string:${utool}/publicator_edit_icon.gif"
+                       i18n:domain="publicator"
+                       i18n:attributes="alt; title;" />
+              </a>
+
+             <div class="portletItem">
+             <tal:block tal:repeat="obj box_items">
+              <div tal:define="item_url obj/RelativeContentURL;
+                                    new_window obj/NewWindow;
+                                    item_title obj/Title;
+                                    item_description obj/Description;
+                                    item_remoteurl obj/RemoteUrl;
+                                    item_number python:repeat['obj'].index;
+                                    item_image obj/ImageURL;"
+                       tal:condition="python:item_url">
+		        	<a href=""
+		                   tal:attributes="href item_remoteurl;
+		                                   target python:test(new_window, '_blank', None);">
+
+		                		<img src=""
+		                                     tal:attributes="src string:${portal_url}/${item_image};
+		                                                     alt item_title;"
+                                                     tal:condition="python:item_image"/>
+				</a>
+                                <div class="visualClear">&nbsp;</div>
+             </div>
+            </tal:block> 
+            </div>
+  </div>
+ </div>
+</body>
+
+</html>

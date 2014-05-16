@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+     <div metal:fill-slot="main" id="portlet-secoes">
+
+         <div class="secoes-coluna-unica">  
+            <div metal:use-macro="here/portlet_news/macros/portlet" />
+         </div>
+
+         <div class="visualClear"><!-- --></div>
+
+         <div class="secoes-coluna-esquerda">
+            <div metal:use-macro="here/portlet_casos/macros/portlet" />
+            <div metal:use-macro="here/portlet_imprensa/macros/portlet" />
+         </div>
+
+         <div class="secoes-coluna-direita">
+            <div metal:use-macro="here/portlet_events/macros/portlet" />
+            <div metal:use-macro="here/portlet_richevent/macros/portlet" />
+         </div>
+
+     </div>
+
+</html>

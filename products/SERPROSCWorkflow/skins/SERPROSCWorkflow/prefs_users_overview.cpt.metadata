@@ -1,0 +1,8 @@
+[validators]
+validators =
+
+[actions]
+action.success = traverse_to:string:prefs_users_overview
+action.success..AddUser=redirect_to:string:join_form?came_from_prefs=1
+action.success..Modify=traverse_to:string:prefs_user_manage
+action.success..Search=traverse_to:string:prefs_users_overview

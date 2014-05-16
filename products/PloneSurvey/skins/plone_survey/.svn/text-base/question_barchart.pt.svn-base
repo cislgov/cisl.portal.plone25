@@ -1,0 +1,40 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plonesurvey">
+<body>
+<div metal:define-macro="barchart"
+           tal:define="totals question/getAggregateAnswers;
+                       options question/getAnswerOptions;
+                       num_options python: len(options);
+                       pct_aggregate_answers question/getPercentageAnswers;
+                       colors python:question.getSurveyColors(num_options)"
+           tal:condition="python:question.getInputType() not in ('text', 'area')">
+
+    <table style="border: solid gray 1px;">
+        <tr>
+            <td valign="bottom"
+                tal:repeat="option options">
+                <table width="40"
+                       tal:attributes="height python: 2 * pct_aggregate_answers[option]">
+                    <tr>
+                        <td tal:define="index repeat/option/index"
+                            tal:attributes="bgcolor python:colors[index]"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td tal:repeat="option options"
+                i18n:translate="" tal:content="option">
+            </td>
+        </tr>
+        <tr>
+            <td tal:repeat="option options"
+                tal:content="python:totals[option]">
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

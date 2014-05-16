@@ -1,0 +1,99 @@
+/*
+ *  This is the file where you put your CSS changes. 
+ *  You should preferrably use this and override the 
+ *  relevant properties you want to change here instead 
+ *  of customizing plone.css to survive upgrades. Writing
+ *  your own plone.css only makes sense for very heavy 
+ *  customizations. Useful variables from Plone are 
+ *  documented at the bottom of this file.
+ */
+ 
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+/*=== Lista dos tres ultimos protocolos publicados ===*/
+
+#ultimos-protocolos {
+   margin-top: 30px;
+}
+
+#ultimos-protocolos table {
+    border: 1px solid #8CACBB;
+    border-collapse: collapse;
+}
+
+#ultimos-protocolos th{
+    border: 1px solid #8CACBB;
+    font-weight: bold;
+    height: 20px;
+    text-align: center;
+}
+
+#ultimos-protocolos td {
+    border: 1px solid #8CACBB;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#linkPastaProtocolo {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#linkPastaProtocolo a {
+    color: #436976;
+}
+
+#textoInicial {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: justify !important;
+}
+
+#maisProtocolos {
+    text-align: right;
+}
+
+#maisProtocolos a {
+    color: #436976;
+}
+
+/*=== Mais protocolos ===*/
+
+#container-protocolos table{
+    border: 1px solid #8CACBB;
+    border-collapse: collapse;
+}
+
+#container-protocolos th{
+    border: 1px solid #8CACBB;
+    font-weight: bold;
+    height: 20px;
+    text-align: center;
+}
+
+#container-protocolos td{
+    border: 1px solid #8CACBB;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#colunaTitulo {
+    width: 200px;
+}
+
+#colunaDeclaracao{
+    text-align: justify !important;
+    width: 570px;
+}
+
+#colunaArquivo {
+    text-align: center;
+    width: 200px;
+}
+
+/* </dtml-with> */

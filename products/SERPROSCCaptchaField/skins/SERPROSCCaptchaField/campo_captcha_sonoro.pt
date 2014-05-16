@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+
+  <head><title></title></head>
+
+  <body>
+    <!-- Campo Captcha Sonoro -->
+    <div metal:define-macro="captcha_sonoro">
+        <script type="text/javascript" src="play.js"></script>
+        <noscript>
+	       Para o perfeito funcionamento da funcionalidade de texto de validação, é necessário que o JavaScript esteja ativo.
+        </noscript>
+	    <div class="field"
+	         tal:define="error errors/erro_captcha|nothing"
+	         tal:attributes="class python:test(error, 'field error', 'field')">
+	        <label i18n:translate="label_captcha"
+	               tal:attributes="for python:'__ac_captcha'">Captcha</label>
+           
+           <span class="fieldRequired" title="Obrigatorio">(Obrigatorio)</span>
+	
+	       <div class="formHelp">
+	        Digite os caracteres da imagem abaixo para continuar:
+	        </div>
+	
+	        <div tal:content="error">Validation error output</div>
+	
+	        <img tal:attributes="src string:$portal_url/@@captcha_view/geraImagem" id="ac_captcha_img" alt="caracteres"/>
+	
+	        <!-- chamada ao captcha sonoro - inicio -->
+	        <div id="playAudio"></div>
+	        <div>
+	          <a href="javascript:play()">Caso n&atilde;o visualize os caracteres, clique neste link para ativar a op&ccedil;&atilde;o sonora.</a>
+	        </div>
+	        <br/>
+	        <!-- chamada ao captcha sonoro - fim -->
+	
+	        <input type="text"
+	               size="15"
+	               tabindex=""
+	               maxlength="5"
+	               tal:attributes="name python:'captcha';
+	                               id python:'__ac_captcha';
+	                               tabindex tabindex/next;"
+	               />
+	    </div>
+    </div>
+
+  </body>
+
+</html>

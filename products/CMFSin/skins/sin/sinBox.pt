@@ -1,0 +1,54 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The a sin box row -->
+  <div metal:define-macro="sinBox" tal:on-error="string:"
+       tal:define="default_max python: 5;
+                  true python: 1;
+                  false python: 0;
+                  verbose verbose | false;
+                  max max_size | default_max;
+                  sin here/sin_tool;
+                  map map | options/map | request/map | here/sin_tool/getCurrentFeed;
+                  rows python:sin.sin(map, max_size=max)">
+
+
+   <dl class="portlet">
+    <dt class="portletHeader">    
+     <table width="100%" border=0 margin=0 padding=0 cellpadding=0 cellspacing=0>
+      <tr>
+       <th align="left" valign="center">
+         <span tal:content="map" class="sinTableTitle">mapname</span>
+       </th>
+       <th class="sinRSSIcon">
+        <a href="#" tal:attributes="href python: context.sin_tool.getChannelUri(map)"><img src="rss.gif" /></a>
+       </th>
+      </tr>
+     </table>
+    </dt>
+    <tal:repeat tal:repeat="row rows">
+      <dd  tal:define="oddrow repeat/row/odd"
+           tal:attributes="class python:test(oddrow, 'portletItem even', 'portletItem odd')">
+           <a href="#"  tal:attributes="href row/link">
+               <tal:title tal:content="structure row/title"/> <br />
+               <span class="portletItemDetails"
+                     tal:condition="python: row.get('date') or nothing" 
+                     tal:content="python: here.toLocalizedTime(row['date'])" />
+               <span class="portletItemDetails"
+                     tal:condition="python: verbose and row.get('description') or nothing" 
+                     tal:replace="structure row/description" />
+          </a>
+      </dd>
+    </tal:repeat>
+    <dd class="portletFooter">
+        <a tal:attributes="href  python:'sinList?synmap=%s' % map">
+            <span i18n:translate="read_more">Read more</span>&hellip;
+        </a>
+    </dd>
+   </dl>
+  </div>
+</body>
+</html>

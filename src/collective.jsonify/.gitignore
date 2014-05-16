@@ -1,0 +1,15 @@
+*.pyc
+*.pyo
+*.swp
+*.swo
+
+/.installed.cfg
+/bin/
+/collective.jsonify.egg-info/
+/develop-eggs/
+/docs/_build/
+/fake-eggs/
+/include/
+/lib/
+/parts/
+/var/

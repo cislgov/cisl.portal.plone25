@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="40207"
+   name=""
+   committed-date="2007-04-03T10:55:47.699182Z"
+   url="https://svn.plone.org/svn/collective/PloneSurvey/branches/v1_1_1/i18n"
+   last-author="nd51"
+   kind="dir"
+   uuid="db7f04ef-aaf3-0310-a811-c281ed44c4ad"
+   repos="https://svn.plone.org/svn/collective"
+   revision="42657"/>
+<entry
+   committed-rev="40207"
+   name="plonesurvey-plone-el.po"
+   text-time="2007-04-03T10:53:55.000000Z"
+   committed-date="2007-04-03T10:55:47.699182Z"
+   checksum="9c817d491b5605108b1c922d0bb10337"
+   last-author="nd51"
+   kind="file"/>
+<entry
+   committed-rev="32632"
+   name="plonesurvey-pl.po"
+   text-time="2007-04-02T14:14:14.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="a49dba683edecdc52682aa0ebc06778b"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="34633"
+   name="plonesurvey-plone-fr.po"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2006-12-13T13:38:51.420235Z"
+   checksum="695e690fb50aa5fe2a026cd042174d64"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="27315"
+   name="plonesurvey-pt.po"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2006-08-16T10:05:55.648834Z"
+   checksum="29bc486f055415fbf6dbe71c2c5e9e16"
+   last-author="rsantos"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="35636"
+   name="plonesurvey-pt-br.po"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2007-01-10T19:25:31.001310Z"
+   checksum="7a952d8a2124d5ede1ba4de2b67f7a49"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="32632"
+   name="plonesurvey-plone-pl.po"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="d526928809c8d7e2815688d777caa6b7"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="32632"
+   name="plonesurvey.pot"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="bf470ab2dd17c7f7990b8871fb2dd3db"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="35615"
+   name="plonesurvey-de.po"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2007-01-10T10:08:19.429957Z"
+   checksum="cb84ef875e546a1d366552078862910b"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="plonesurvey-plone-pt.po"
+   text-time="2007-04-02T14:14:14.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="dd009e451806a16f3805a297dd9a06c1"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="35636"
+   name="plonesurvey-plone-pt-br.po"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2007-01-10T19:25:31.001310Z"
+   checksum="3292c01bd2393799834e19cf47475af9"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="40207"
+   name="plonesurvey-el.po"
+   text-time="2007-04-03T10:53:55.000000Z"
+   committed-date="2007-04-03T10:55:47.699182Z"
+   checksum="94429ee651f491882ac1c4177a713838"
+   last-author="nd51"
+   kind="file"/>
+<entry
+   committed-rev="32632"
+   name="plonesurvey-plone.pot"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2006-10-31T22:26:41.030543Z"
+   checksum="7e17c88fffacbbcb6131583679e822b8"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="25423"
+   name="usei18ndude.sh"
+   text-time="2007-04-02T14:14:15.000000Z"
+   committed-date="2006-06-27T20:49:35.288532Z"
+   checksum="32888f2e6da8cee7a5adc6ffa3c9cd9f"
+   last-author="naro"
+   kind="file"
+   prop-time="2007-04-02T14:14:13.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="README.txt"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="348a93f33bd8cda1040018ff5d149435"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="plonesurvey-cs.po"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="0ce0fe54913dddb49e6df9170564568b"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="34633"
+   name="plonesurvey-fr.po"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-12-13T13:38:51.420235Z"
+   checksum="c46b678eb8fda4ce0c69f85392786289"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+<entry
+   committed-rev="32269"
+   name="manual.pot"
+   text-time="2007-04-02T14:14:16.000000Z"
+   committed-date="2006-10-24T15:35:20.677871Z"
+   checksum="c863f76d3422ffbacf58e988082c6cf2"
+   last-author="davismr"
+   kind="file"
+   prop-time="2007-04-02T14:14:14.000000Z"/>
+</wc-entries>
